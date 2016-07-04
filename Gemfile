@@ -3,6 +3,14 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
+
+gem 'devise'
+
+gem 'twitter-bootstrap-rails'
+
+gem 'devise-bootstrap-views'
+
+gem 'annotator'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -49,6 +57,6 @@ end
 
 group :production do
   gem 'pg'
-  
+
   gem 'rails_12factor'
 end

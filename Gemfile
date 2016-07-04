@@ -8,6 +8,8 @@ gem 'devise'
 
 gem 'twitter-bootstrap-rails'
 
+gem 'bootstrap_form'
+
 gem 'devise-bootstrap-views'
 
 gem 'annotator'

@@ -1,0 +1,12 @@
+<h1><%= @chess_class.school %></h1>
+
+ <div class="row">
+   <div class="col-md-8">
+     <p><%= @chess_class.size %> students so far.</p>
+     <p>$<%= @chess_class.price %> per quarter.</p>
+   </div>
+   <div class="col-md-4">
+     <%= link_to "Edit", edit_chess_class_path(@chess_class), class: 'btn btn-primary' %>
+     <%= link_to "Delete", @chess_class, method: :delete, class: 'btn btn-danger', data: {confirm: "Are you sure?"} %>
+   </div>
+ </div>

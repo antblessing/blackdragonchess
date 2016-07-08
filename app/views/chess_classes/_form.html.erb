@@ -1,3 +1,4 @@
+<% if current_user.admin? %>
 <div class="row">
   <div class="col-md-4">
     <%= bootstrap_form_for(@chess_class) do |f| %>
@@ -11,3 +12,6 @@
     <% end %>
   </div>
 </div>
+<% else %>
+  <%= link_to "Back", chess_classes_path, class: 'btn btn-danger' %>
+<% end %>

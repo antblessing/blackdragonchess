@@ -36,7 +36,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js" type="text/javascript"></script>
     <![endif]-->
   </head>
-  <body>
+  <body id="homepage-image">
 
     <div class="navbar navbar-default navbar-static-top">
       <div class="container">
@@ -45,12 +45,18 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Blackdragonchess</a>
+        <a class="navbar-brand" href="#">BlackDragonChess</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
             <li><%= link_to "All Schools", chess_classes_path %></li>
             <li><%= link_to "About", welcome_about_path   %></li>
             <li><%= link_to "Contact", welcome_index_path  %></li>
+            <li><%= link_to "Instructors", instructors_path %></li>
+            <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+            <% if current_user.admin? %>
+            <li><%= link_to "Add Class", new_chess_class_path %></li>
+            <li><%= link_to "Add Instructor", new_instructor_path %></li>
+            <% end %>
           </ul>
         </div>
       </div>
@@ -64,7 +70,6 @@
         </div>
       </div><!--/row-->
       <footer>
-        <p>&copy; Company 2016</p>
       </footer>
     </div> <!-- /container -->
 

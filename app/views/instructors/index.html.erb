@@ -1,0 +1,7 @@
+<% @instructors.each do |instructor| %>
+<div>
+  <h2><%= instructor.first_name %> <%= instructor.last_name %></h2>
+  <br />
+  <%= link_to "View", instructor_path(instructor), class: "btn btn-primary" %>
+</div>
+<% end %>

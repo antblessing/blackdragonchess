@@ -1,6 +1,6 @@
 class ChessClassesController < ApplicationController
   def index
-    @classes = ChessClass.all
+      @classes = ChessClass.all
   end
 
   def show
@@ -46,6 +46,7 @@ class ChessClassesController < ApplicationController
 
   def create
     @chess_class = ChessClass.new
+
     @chess_class.school = params[:chess_class][:school]
     @chess_class.days = params[:chess_class][:days]
     @chess_class.price = params[:chess_class][:price]

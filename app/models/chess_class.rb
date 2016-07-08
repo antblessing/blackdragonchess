@@ -14,7 +14,10 @@
 #
 
 class ChessClass < ActiveRecord::Base
-  validates_presence_of :school, :days, :price, :start_time, :end_time
+  validates_presence_of :school, :days, :price
   validates :size, numericality: { only_integer: true, less_than: 60}
   validates :price, numericality: { only_integer: true }
+
+  has_many :class_instructors
+  has_many :insturctors, through: :class_instructors
 end

@@ -1,0 +1,14 @@
+<% if current_user.admin? %>
+<div class="row">
+  <div class="col-md-4">
+    <%= bootstrap_form_for(@instructor) do |f| %>
+        <%= f.text_field :first_name %>
+        <%= f.text_field :last_name %>
+        <%= f.email_field :email %>
+        <%= f.submit "Save", class: 'btn btn-success' %>
+    <% end %>
+  </div>
+</div>
+<% else %>
+  <%= link_to "Back", instructors_path, class: 'btn btn-danger' %>
+<% end %>

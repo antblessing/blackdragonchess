@@ -1,0 +1,15 @@
+<table>
+  <% @instructors.each do |instructor| %>
+  <tr>
+    <td><%= instructor.first_name %> <%= instructor.last_name %> </td>
+    <td>
+      <% if @chess_class.class_instructors.pluck(:instructor_id).include?(instructor.id) %>
+        <%= link_to "Remove", chess_class_class_instructor_path(@chess_class, instructor, remove: true), method: :delete, class: "btn btn-danger" %>
+      <% else %>
+        <%= link_to "Add", chess_class_class_instructors_path(@chess_class, instructor_id: instructor.id), method: :post, class: "btn btn-success" %>
+      <% end %>
+    </td>
+
+  </tr>
+  <% end %>
+</table>

@@ -1,6 +1,58 @@
-<div class="homepage-index">
-  <div class="homepage-info">
-    <h1>Black Dragon Chess</h1>
-    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-  </div>
+<div class="container">
+
+    <!-- Heading Row -->
+    <div class="row">
+        <div class="col-md-12">
+            <img class="img-responsive img-rounded" alt=""><%= image_tag("cator_chess1.jpg") %></img>
+            <div class="col-md-4" id="text-in-image">
+                <h1>Black Dragon Chess</h1>
+                <%= link_to "Click here", chess_classes_path, class: "btn btn-primary" %>
+                <strong> to see available classes in your area.</strong>
+            </div>
+        </div>
+        <!-- /.col-md-8 -->
+        <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Call to Action Well -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="well text-center">
+              Black Dragon Chess offers afterschool enrichment classes throughout the San Ramon Valley.
+            </div>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Learn while having fun!</h2>
+            <p>Our classes emphasize fun while keeping a close eye on sportsmanship and respect.</p>
+            <a class="btn btn-default" href="#">More Info</a>
+        </div>
+        <!-- /.col-md-4 -->
+        <div class="col-md-4">
+            <h2>Experienced Instructors</h2>
+            <p>Classes are lead by seasoned, high ranked tournament chess coaches.</p>
+            <a class="btn btn-default" href="#">More Info</a>
+        </div>
+        <!-- /.col-md-4 -->
+        <div class="col-md-4">
+            <h2>Quarterly Tournaments</h2>
+            <p>After every 8 week session, a friendly tournament is held for all students of Black Dragon Chess.</p>
+            <a class="btn btn-default" href="#">More Info</a>
+        </div>
+        <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+
+    <!-- Footer -->
+    <footer>
+    </footer>
+
 </div>

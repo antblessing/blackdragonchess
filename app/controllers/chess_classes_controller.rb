@@ -27,6 +27,7 @@ class ChessClassesController < ApplicationController
     @chess_class = ChessClass.find(params[:id])
 
     @chess_class.school = params[:chess_class][:school]
+    @chess_class.location = params[:chess_class][:location]
     @chess_class.days = params[:chess_class][:days]
     @chess_class.price = params[:chess_class][:price]
     @chess_class.size = params[:chess_class][:size]
@@ -48,6 +49,7 @@ class ChessClassesController < ApplicationController
     @chess_class = ChessClass.new
 
     @chess_class.school = params[:chess_class][:school]
+    @chess_class.location = params[:chess_class][:location]
     @chess_class.days = params[:chess_class][:days]
     @chess_class.price = params[:chess_class][:price]
     @chess_class.size = params[:chess_class][:size]

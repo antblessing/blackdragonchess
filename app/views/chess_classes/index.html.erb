@@ -1,5 +1,16 @@
+<div class="row">
 <% @classes.each do |chess_class| %>
-<div>
-  <h2><%= link_to "#{chess_class.school}", chess_class_path(chess_class) %></h2>
+<div class="col-sm-4 col-lg-4 col-md-4">
+  <div class="thumbnail">
+    <img alt=""><%= image_tag("chesscontest.jpg") %></img>
+      <div class="caption">
+        <h4 class="pull-right">$<%= chess_class.price %></h4>
+          <h4><%= link_to "#{chess_class.school}", chess_class_path(chess_class) %></a>
+          </h4>
+          <p><%= chess_class.location %></p>
+          <p><%= chess_class.size %>/60</p>
+      </div>
+  </div>
 </div>
 <% end %>
+</div>

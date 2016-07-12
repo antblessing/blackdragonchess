@@ -11,10 +11,11 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  days       :string
+#  location   :string
 #
 
 class ChessClass < ActiveRecord::Base
-  validates_presence_of :school, :days, :price
+  validates_presence_of :school, :days, :price, :location
   validates :size, numericality: { only_integer: true, less_than: 60}
   validates :price, numericality: { only_integer: true }
 

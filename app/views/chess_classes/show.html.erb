@@ -1,10 +1,10 @@
-<h1><%= @chess_class.school %></h1>
+<h1><%= @chess_class.school %> - <%= @chess_class.location %>,CA</h1>
 
  <div class="row">
    <div class="col-md-8">
-     <p><%= @chess_class.size %> students so far.</p>
+     <p><%= @chess_class.size %>/60 students.</p>
      <p>$<%= @chess_class.price %> per quarter.</p>
-     <p>Every <%= @chess_class.days %></p>
+     <p>Each <%= @chess_class.days %></p>
    </div>
    <% if current_user.admin? %>
    <div class="col-md-4">

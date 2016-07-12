@@ -1,7 +1,15 @@
+<div class="row">
 <% @instructors.each do |instructor| %>
-<div>
-  <h2><%= instructor.first_name %> <%= instructor.last_name %></h2>
-  <br />
-  <%= link_to "View", instructor_path(instructor), class: "btn btn-primary" %>
+<div class="col-sm-4 col-lg-4 col-md-4">
+  <div class="thumbnail">
+    <img alt=""><%= image_tag("chess-program.jpg") %></img>
+      <div class="caption">
+        <h4 class="pull-right"></h4>
+          <h4><%= link_to "#{instructor.first_name + " " + instructor.last_name}", instructor_path(instructor) %></a>
+          </h4>
+          <p>Bio/Information</p>
+      </div>
+  </div>
 </div>
 <% end %>
+</div>

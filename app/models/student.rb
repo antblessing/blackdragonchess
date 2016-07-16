@@ -17,5 +17,9 @@
 #
 
 class Student < ActiveRecord::Base
-  belongs_to :chess_class
+  validates_presence_of :first_name, :last_name, :grade, :phone_number
+  #validates :first_name, length: { minimum: 2 }
+  #validates :last_name, length: { minimum: 2 }
+  validates :grade, inclusion: { in: [1,2,3,4,5] }
+  belongs_to :chess_class, dependent: :destroy
 end

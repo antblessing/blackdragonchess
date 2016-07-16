@@ -8,14 +8,15 @@ class StudentsController < ApplicationController
     @student.last_name = params[:student][:last_name]
     @student.grade = params[:student][:grade]
     @student.phone_number = params[:student][:phone_number]
-    @student.chess_class = @chess_class.school
 
     if @student.save
+      @chess_class.size += 1
+      @chess_class.save
       flash[:notice] = "Student was added to class."
       redirect_to @chess_class
     else
-      flash.now[:error] = "Problem adding student to class."
-      render :new
+      flash[:error] = "Problem adding student to class. Please make sure all fields are complete."
+      render "chess_classes/show"
     end
   end
 
@@ -28,7 +29,10 @@ class StudentsController < ApplicationController
 
     if @student.destroy
       flash[:notice] = "Student was removed from class."
+      redirect_to @chess_class
     else
-      flash.now[:error] = "Could not remove student."
+      flash[:error] = "Could not remove student."
+      redirect_to @chess_class
+    end
   end
 end

@@ -1,22 +1,31 @@
-<h1><%= @chess_class.school %> - <%= @chess_class.location %>,CA</h1>
+<div class="row">
+  <div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+      <img alt=""><%= image_tag("chesscontest.jpg") %></img>
+        <div class="caption">
+          <h4 class="pull-right">$<%= @chess_class.price %></h4>
+            <h4><%= link_to "#{@chess_class.school}", chess_class_path(@chess_class) %></a>
+            </h4>
+            <p><%= @chess_class.location %></p>
+            <p><%= @chess_class.size %>/60</p>
+        </div>
+    </div>
+  </div>
 
- <div class="row">
-   <div class="col-md-8">
-     <p><%= @chess_class.size %>/60 students.</p>
-     <p>$<%= @chess_class.price %> per quarter.</p>
-     <p>Each <%= @chess_class.days %></p>
-   </div>
-   <% if current_user.admin? %>
-   <div class="col-md-4">
-     <%= link_to "Edit", edit_chess_class_path(@chess_class), class: 'btn btn-primary' %>
-     <%= link_to "Delete", @chess_class, method: :delete, class: 'btn btn-danger', data: {confirm: "Are you sure?"} %>
-   </div>
-    <% else %>
-     <%= link_to "Back", chess_classes_path, class: 'btn btn-primary' %>
-    <% end %>
- </div>
+  <% if current_user.admin? %>
+  <div class="col-md-4">
+    <%= link_to "Edit", edit_chess_class_path(@chess_class), class: 'btn btn-primary btn-xs' %>
+    <%= link_to "Delete", @chess_class, method: :delete, class: 'btn btn-danger btn-xs', data: {confirm: "Are you sure?"} %>
+    <%= link_to "Roster", chess_class_roster_path(@chess_class), class: 'btn btn-primary btn-xs' %>
+  </div>
+   <% else %>
+    <%= link_to "Back", chess_classes_path, class: 'btn btn-primary' %>
+   <% end %>
+</div>
+
+<div class="row">
+ Sign your child up for this class below:
  <br />
- <div class="row">
- Sign up for this class below:
+ <br />
  <%= render 'students/form', student: Student.new, chess_class: @chess_class %>
 </div>

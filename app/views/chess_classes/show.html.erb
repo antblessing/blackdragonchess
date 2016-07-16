@@ -15,3 +15,8 @@
      <%= link_to "Back", chess_classes_path, class: 'btn btn-primary' %>
     <% end %>
  </div>
+ <br />
+ <div class="row">
+ Sign up for this class below:
+ <%= render 'students/form', student: Student.new, chess_class: @chess_class %>
+</div>

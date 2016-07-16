@@ -21,4 +21,5 @@ class ChessClass < ActiveRecord::Base
 
   has_many :class_instructors
   has_many :insturctors, through: :class_instructors
+  has_many :students
 end

@@ -8,6 +8,7 @@ class StudentsController < ApplicationController
     @student.last_name = params[:student][:last_name]
     @student.grade = params[:student][:grade]
     @student.phone_number = params[:student][:phone_number]
+    @student.email = current_user.email
 
     if @student.save
       @chess_class.size += 1

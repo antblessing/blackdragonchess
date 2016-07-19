@@ -12,7 +12,7 @@
     </div>
   </div>
 
-  <% if current_user.admin? %>
+  <% if current_user && current_user.admin? %>
   <div class="col-md-4">
     <%= link_to "Edit", edit_chess_class_path(@chess_class), class: 'btn btn-primary btn-xs' %>
     <%= link_to "Delete", @chess_class, method: :delete, class: 'btn btn-danger btn-xs', data: {confirm: "Are you sure?"} %>
@@ -24,7 +24,7 @@
 </div>
 
 <div class="row">
- Sign your child up for this class below:
+ Sign your child up for this class below. Please make sure all information is correct:
  <br />
  <br />
  <%= render 'students/form', student: Student.new, chess_class: @chess_class %>

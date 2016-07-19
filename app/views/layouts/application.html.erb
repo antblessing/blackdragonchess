@@ -52,7 +52,7 @@
             <li><%= link_to "Contact", welcome_about_path  %></li>
             <li><%= link_to "Instructors", instructors_path %></li>
             <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-            <% if current_user.admin? %>
+            <% if current_user && current_user.admin? %>
             <li><%= link_to "Add Class", new_chess_class_path %></li>
             <li><%= link_to "Add Instructor", new_instructor_path %></li>
             <% end %>

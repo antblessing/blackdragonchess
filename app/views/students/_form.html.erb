@@ -1,0 +1,15 @@
+<% if current_user %>
+<div class="row">
+  <div class="col-md-4">
+    <%= bootstrap_form_for [chess_class, student] do |f| %>
+        <%= f.text_field :first_name %>
+        <%= f.text_field :last_name %>
+        <%= f.number_field :grade %>
+        <%= f.telephone_field :phone_number %>
+        <%= f.submit "Save", class: 'btn btn-success' %>
+    <% end %>
+  </div>
+</div>
+<% else %>
+  <%#= link_to "Back", chess_class_path(@chess_class), class: 'btn btn-danger' %>
+<% end %>

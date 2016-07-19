@@ -1,0 +1,28 @@
+<h1><%= @chess_class.school %> Roster</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last name</th>
+      <th>Grade</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @chess_class.students.each do |student| %>
+    <tr>
+      <td><%= student.first_name %></td>
+      <td><%= student.last_name %></td>
+      <td><%= student.grade %></td>
+      <td><%= student.email %></td>
+      <td><%= student.phone_number %></td>
+      <td>
+        <%= link_to "Remove", [student.chess_class, student], :method => :delete,
+            :data => {:confirm => "Are you sure?"}, :class => "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

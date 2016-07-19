@@ -1,4 +1,8 @@
 class ChessClassesController < ApplicationController
+  def roster
+    @chess_class = ChessClass.find(params[:chess_class_id])
+  end
+  
   def index
       @classes = ChessClass.all
   end
